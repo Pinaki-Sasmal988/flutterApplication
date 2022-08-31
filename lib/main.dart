@@ -16,13 +16,21 @@ class MyApp extends StatelessWidget {
     String val="pinaki";
     return MaterialApp(
      // home: HomePage(),
-      themeMode:ThemeMode.light ,
-      
+      //themeMode:ThemeMode.light ,
+      theme: ThemeData(
+       // primarySwatch: Colors.deepPurple,
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.white,
+          iconTheme: IconThemeData(color:Colors.black),
+          titleTextStyle: TextStyle(color: Colors.black), 
+        ),
+        
+      ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: "/",
+      initialRoute: MyRoutes.homeRoute,
       routes: {
         "/":(context)=> LoginPage(),
         MyRoutes.loginRoute:(context)=>LoginPage(),
